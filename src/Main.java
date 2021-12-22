@@ -31,13 +31,13 @@ public class Main {
 
 //        listReadySolders.forEach(System.out::println);
 
-        List<Person> suitableForWork = persons.stream()
+        List<Person> listSuitableForWork = persons.stream()
                 .filter(x -> x.getEducation().equals(Education.HIGHER))
                 .filter(x -> x.getAge() >= 18)
                 .filter(x -> (x.getSex().equals(Sex.MAN) & x.getAge() < 65) || (x.getSex().equals(Sex.WOMAN) & x.getAge() < 60))
                 .sorted(Comparator.comparing(Person::getFamily))
                 .collect(Collectors.toList());
-        AtomicInteger i = new AtomicInteger();
-//        suitableForWork.forEach(System.out::println);
+
+//        listSuitableForWork.forEach(System.out::println);
     }
 }
